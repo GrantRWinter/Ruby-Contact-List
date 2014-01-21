@@ -26,7 +26,7 @@ class Application
         new_contact()
       when "list"
         list() #puts contact list 
-      when "show:"
+      when "show :#{id_number}"
         show_contact() # will print contact details by id reference
     end
   end
@@ -50,8 +50,8 @@ class Application
 
 # method to show the contact details
   def show_contact
-    puts "Which ID would you like to see?"
-    id_number = gets.chomp.to_i
+    #puts "Which ID would you like to see?"
+    
     puts @contacts[id_number]
     show_main_menu
 
