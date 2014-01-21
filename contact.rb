@@ -5,24 +5,20 @@ class Contact
   attr_accessor :email
   attr_accessor :id
 
-  @@id = -1
+  @@id = 0
   
   def initialize(name, email)
     @@id += 1
     @id = "0" + @@id.to_s
-    @name = name.split(" ")# TODO: assign local variables to instance variables
-    @first_name = @name[0].capitalize!
-    @last_name = @name[1][0].capitalize!
-    @name = @first_name + @last_name
+    @first_name = name.split(" ")[0]
+    @last_name = name.split(" ")[1]
     @email = email
   end
   
   def to_s
-    "#{@id}: #{@name} #{@email}"  # TODO: return string representation of Contact
+    "#{@id} #{@first_name} #{@last_name} #{@email}"  # TODO: return string representation of Contact
   end
 
-  def create_contact
-    @contact = [@id, @name, @email]
-  end
+  
   
 end

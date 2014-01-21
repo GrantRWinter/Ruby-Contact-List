@@ -1,18 +1,18 @@
 class Application
  
-  def initialize
+  def initialize #public
     # Start with an empty array of contacts.
     # TODO: Perhaps stub (seed) some contacts so we don't have to create some every time we restart the app
     @contacts = []
   end
  
-  def run
+  def run #public
     show_main_menu
     input = gets.chomp
   end
   
   # Prints the main menu only
-  def show_main_menu
+  def show_main_menu #Should be private -look up!!
     puts "Welcome to the app. What's next?"
     puts " new  - Create a new contact"
     puts " list  - List all contacts"
@@ -25,13 +25,14 @@ class Application
       when "new"
         new_contact()
       when "list"
-        contact_list() #puts contact list
-      when "show : id "
-        show_contact()
+        list() #puts contact list 
+      when "show:"
+        show_contact() # will print contact details by id reference
     end
   end
 
 # method creates a new contact
+# **add while loop**
 
   def new_contact
     puts "Please enter your full name"
@@ -39,26 +40,27 @@ class Application
     puts "Please enter your email address"
     email = gets.chomp
     new_contact = Contact.new(name, email)
-    add_contact(name, email)
+    puts new_contact
+    @contacts.push(new_contact)
+    puts @contacts
+    show_main_menu
   end
 
-# method to add contact to array
-
-  def add_contact(name, email)
-    
-
-
-  end
+  
 
 # method to show the contact details
   def show_contact
+    puts "Which ID would you like to see?"
+    id_number = gets.chomp.to_i
+    puts @contacts[id_number]
+    show_main_menu
+
 
   end
 
 #method to display contact list
-  def contact_list
-
+  def list
+    puts @contacts
+    show_main_menu
   end
-
-
 end
