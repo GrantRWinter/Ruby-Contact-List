@@ -6,6 +6,7 @@ class Contact
   attr_accessor :id
 
   @@id = 0
+  
   def initialize(name, email)
     @@id += 1
     @id = "0" + @@id.to_s
