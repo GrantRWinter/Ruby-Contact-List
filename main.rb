@@ -1,3 +1,5 @@
+require 'rubygems'
+require 'pry'
 require 'term/ansicolor'
 require_relative 'contact'
 require_relative 'application'

@@ -6,7 +6,6 @@ class Contact
   attr_accessor :id
 
   @@id = 0
-  
   def initialize(name, email)
     @@id += 1
     @id = "0" + @@id.to_s
@@ -16,7 +15,7 @@ class Contact
   end
   
   def to_s
-    "#{@id} #{@first_name} #{@last_name} #{@email}"  # TODO: return string representation of Contact
+    "\n#{@id} #{@first_name} #{@last_name} #{@email}\n"  # TODO: return string representation of Contact
   end
 
   
