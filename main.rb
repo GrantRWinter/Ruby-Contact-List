@@ -1,3 +1,4 @@
+require_relative 'database.rb'
 require 'rubygems'
 require 'pry'
 require "colorize"
